@@ -1,0 +1,28 @@
+﻿@model EcommerceCCO2023.Models.ClienteViewModel
+
+<h2>Atualizar Cliente</h2>
+
+<form asp-action="UpdateCli" method="post">
+    <input type="hidden" asp-for="IdCliente" />
+    <div class="form-group">
+        <label asp-for="NomeCli"></label>
+        <input asp-for="NomeCli" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Senha"></label>
+        <input asp-for="Senha" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Foto"></label>
+        <input asp-for="Foto" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Status"></label>
+        <input asp-for="Status" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Atualizar</button>
+</form>

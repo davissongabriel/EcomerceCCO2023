@@ -1,0 +1,21 @@
+﻿@* @model List<EcommerceCCO2023.Models.ProdutoViewModel>
+
+    <!-- Partial View para exibir o Carousel -->
+    <partial name="_Carousel" />
+
+    <h2>Seu Preferidos! </h2>
+    <h4>vai mais um ai? </h4>
+
+    <div class="row">
+        <!-- Usando a Partial View para exibir os lanches preferidos -->
+        @foreach (var lanche in Model)
+        {
+            <partial name="_ProdutoResumo" for="@lanche" />
+        }
+    </div>
+ *@
+
+
+ <div class="form">
+     <p>Teste criação usuário</p>
+ </div>

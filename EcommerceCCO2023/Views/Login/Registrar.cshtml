@@ -1,0 +1,85 @@
+﻿@model EcommerceCCO2023.Models.Login.LoginViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente - E-commerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F9BB78;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+            .signup-container h2 {
+                color: #ff8c00; /* Laranja */
+            }
+
+            .signup-container input {
+                width: 100%;
+                padding: 10px;
+                margin: 8px 0;
+                box-sizing: border-box;
+            }
+
+            .signup-container select {
+                width: 100%;
+                padding: 10px;
+                margin: 8px 0;
+                box-sizing: border-box;
+            }
+
+            .signup-container button {
+                width: 48%;
+                padding: 10px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+                .signup-container button.create {
+                    background-color: #4caf50; /* Verde */
+                    color: #fff;
+                }
+
+                .signup-container button.cancel {
+                    background-color: #ff0000; /* Vermelho */
+                    color: #fff;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <h2>Cadastro de Cliente</h2>
+        <form id="signupForm" asp-action="Registrar" method="post">
+            <input asp-for="Nome" type="text" id="name" placeholder="Nome">
+            <input asp-for="Email" type="email" id="email" placeholder="Email">
+            <input asp-for="Senha" type="password" id="password" placeholder="Senha">
+            <button type="submit" class="create">Criar</button>
+            <a  class="btn btn-danger cancel" asp-action="Index" asp-controller="Login">Cancelar</a>
+            <span asp-validation-for="Email"></span>
+        </form>
+    </div>
+</body>
+</html>

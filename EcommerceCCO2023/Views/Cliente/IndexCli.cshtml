@@ -1,0 +1,32 @@
+﻿@model List<EcommerceCCO2023.Models.ClienteViewModel>
+
+<h2>Lista de Clientes</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Foto</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@cliente.IdCliente</td>
+                <td>@cliente.NomeCli</td>
+                <td>@cliente.Email</td>
+                <td>@cliente.Foto</td>
+                <td>@cliente.Status</td>
+                <td>
+                    <a asp-action="UpdateCli" asp-route-id="@cliente.IdCliente">Editar</a> |
+                    <a asp-action="DeleteCli" asp-route-id="@cliente.IdCliente">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
